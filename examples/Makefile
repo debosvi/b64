@@ -23,6 +23,16 @@ all: $(TARGETS) test
 
 c-example1 c-example2: libb64.a
 
+strip:
+	strip $(TARGETS)
+			
+install:
+	$(INSTALL_BIN) -d $(INSTALL_PREFIX)/share/b64
+	$(INSTALL_BIN) -c $(TARGETS) $(INSTALL_PREFIX)/share/b64
+	
+uninstall:
+	@rm -rf $(INSTALL_PREFIX)/share/b64
+
 clean: 
 	rm -f *.exe* *.o $(TARGETS) $(DEBRIS) *.bak *~
 
