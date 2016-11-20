@@ -29,6 +29,13 @@ libb64.a: cencode.o cdecode.o
 
 strip:
 	strip $(TARGETS)
+	
+install:
+	$(INSTALL_BIN) -d $(INSTALL_PREFIX)/lib
+	$(INSTALL_BIN) -c $(TARGETS) $(INSTALL_PREFIX)/lib
+	
+uninstall:
+	@rm -rf $(INSTALL_PREFIX)/lib/$(TARGETS)
 
 clean:
 	rm -f *.exe* *.o $(TARGETS) *.bak *~

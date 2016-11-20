@@ -36,8 +36,16 @@ all: $(TARGETS) #strip
 
 base64: libb64.a
 
-strip:
+strip: 
 	strip $(TARGETS)
+		
+install:
+	$(INSTALL_BIN) -d $(INSTALL_PREFIX)/bin
+	$(INSTALL_BIN) -c $(TARGETS) $(INSTALL_PREFIX)/bin
+		
+uninstall:
+	@rm -rf $(INSTALL_PREFIX)/bin/$(TARGETS)
+
 
 clean: clean_VisualStudioProject
 	rm -f *.exe* *.o $(TARGETS) *.bak *~
