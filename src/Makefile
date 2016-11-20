@@ -28,7 +28,7 @@ libb64.a: cencode.o cdecode.o
 	$(AR) $(ARFLAGS) $@ $^
 
 strip:
-	strip $(BINARIES) *.exe
+	strip $(TARGETS)
 
 clean:
 	rm -f *.exe* *.o $(TARGETS) *.bak *~

@@ -37,7 +37,7 @@ all: $(TARGETS) #strip
 base64: libb64.a
 
 strip:
-	strip $(BINARIES) *.exe
+	strip $(TARGETS)
 
 clean: clean_VisualStudioProject
 	rm -f *.exe* *.o $(TARGETS) *.bak *~

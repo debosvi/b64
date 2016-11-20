@@ -23,6 +23,9 @@ all: $(TARGETS) test
 
 c-example1 c-example2: libb64.a
 
+strip:
+	strip $(TARGETS)
+
 clean: 
 	rm -f *.exe* *.o $(TARGETS) $(DEBRIS) *.bak *~
 
